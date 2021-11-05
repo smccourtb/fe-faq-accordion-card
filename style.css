@@ -139,8 +139,8 @@ body {
 main {
     display: flex;
     background: white;
-    width: 50%;
-    border-radius: 1em;
+    width: 800px;
+    border-radius: 1.8em;
     box-shadow: 0px 40px 100px -60px;
     align-items: center;
     overflow: hidden;
@@ -151,53 +151,75 @@ input[type="radio"] {
 }
 
 img {
+    /* position: relative; */
+    /* left: -40px; */
+    height: 50%;
     padding: 30px 0;
-    position: relative;
-    left: -40px;
-    width: 100%;
-    overflow: hidden;
+    margin-left: -110px;
+    /* max-height: 30px; */
+    transform: scale(0.8);
+    /* overflow: hidden; */
 }
 
-nav {
-    padding: 30px 0;
-    margin-right: 60px;
+.box-img {
+    display: block;
+    position: absolute;
+    height: 12rem;
+    margin-left: -98px;
+    margin-top: -297px;
 }
 
-main > section {
-    width: 100%;
+main > div {
+    background: url("./images/bg-pattern-desktop.svg") no-repeat;
+    background-position: -480px -240px;
+    background-size: 220%;
+    height: 100%;
 }
 .wrapper {
     max-width: 80%;
     width: 100%;
-    margin-right: 60px;
+    margin-right: 90px;
+    margin-left: 40px;
+    max-height: 200px;
+    /* border: solid; */
+    /* margin-bottom: 80px; */
+
+    /* margin-bottom: 30px; */
+    /* padding: 50px 0; */
 }
 
 h1 {
-    font-size: 2em;
+    /* display: block; */
+    font-size: 2.2em;
     text-align: left;
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 700;
-    margin-top: 50px;
-    margin-bottom: 35px;
+    margin-top: -60px;
+    margin-bottom: 15px;
 }
 
 label {
+    color: hsl(237, 12%, 33%);
     display: flex;
-    margin-top: 16px;
     width: 100%;
-    height: 32px;
+    /* height: 32px; */
+    padding: 8px 0px;
     cursor: pointer;
-    border-bottom: 1px solid hsl(240, 5%, 91%);
     user-select: none;
     align-items: center;
+    /* border-bottom: 1px solid hsl(240, 5%, 91%); */
 }
+
+/* .title {
+} */
 
 label div:first-child {
     width: 100%;
     /* line-height: 24px; */
-    height: 32px;
-    margin-top: 16px;
-    font-size: 1.2em;
+    /* height: 32px; */
+    /* margin-top: 16px; */
+    font-size: 1em;
+    /* border: solid; */
 }
 
 .chevron {
@@ -225,15 +247,23 @@ label div:first-child {
     box-sizing: border-box;
     color: hsl(240, 6%, 50%);
     font-size: 0.9em;
-    margin: 10px 0px;
     max-height: 0;
+    width: 93%;
     overflow: hidden;
     transition: max-height, 0.5s;
+    line-height: 1.5em;
+    /* padding: 8px 0px; */
+}
+
+.wrap {
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    padding: 8px 0px;
 }
 
 input:checked ~ .content {
-    max-height: 400px;
-    transition: max-height, 1s;
+    max-height: 5em;
+    /* margin: 10px 0px;     */
+    transition: max-height, 0.3s;
 }
 
 input:checked ~ label .chevron:before {
@@ -251,4 +281,67 @@ input:checked ~ label > .title {
 .title:hover {
     color: hsl(14, 88%, 65%);
     transition: 0.3s;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+        width: 325px;
+        height: 500px;
+        justify-content: center;
+        overflow: visible;
+        font-size: 13px;
+    }
+    .wrapper {
+        max-width: 100%;
+        margin: 0px;
+    }
+
+    .wrap {
+        margin: 0px 20px;
+        margin-bottom: -1px;
+    }
+
+    img {
+        src: url("./images/illustration-woman-online-mobile.svg");
+        height: 230%;
+        left: 120px;
+        bottom: 135px;
+        position: relative;
+        padding: 0;
+    }
+
+    .img-container {
+        width: 100%;
+        background-size: 78%;
+        height: 100px;
+        position: relative;
+        top: -100px;
+        background: url("./images/bg-pattern-mobile.svg") no-repeat;
+        background-position: 40px -5px;
+    }
+
+    .box-img {
+        transform: scale(0.5);
+        position: relative;
+        top: -25px;
+        left: 80px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: -70px;
+    }
+
+    .content {
+        padding-right: 10px;
+    }
+
+    footer {
+        display: none;
+    }
 }
